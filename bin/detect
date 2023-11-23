@@ -1,3 +1,4 @@
 #!/bin/sh
 
 echo "CipherStash Buildpack"
+exit 0

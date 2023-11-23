@@ -1,1 +1,20 @@
 #!/bin/bash
+
+set_database_env() {
+    env_dir=$1;
+    if [ -d "$env_dir" ]; then
+        local database_url=$(cat $env_dir/DATABASE_URL)
+        echo "-----> Mapping database to Tandem running on localhost:5442"
+        export CS_TANDEM_DATABASE_URL=$database_url
+        export DATABASE_URL=$(modify_url $database_url)
+    fi
+}
+
+modify_url() {
+    local original_url=$1
+    local before_host=${original_url%:*:*}
+    local db_part=${original_url##*/}
+    "${before_host}:5442/${db_part}"
+}
+
+set_database_env
