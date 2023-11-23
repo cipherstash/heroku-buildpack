@@ -18,3 +18,5 @@ echo "Building Tandem binary into slug" | indent
 mkdir -p "$BUILD_DIR/.cipherstash/bin/"
 cp "$BUILDPACK_DIR/tandem" "$BUILD_DIR/.cipherstash/bin/tandem"
 export PATH="$BUILD_DIR/.cipherstash/bin":$PATH
+
+cp "$BUILDPACK_DIR/profile.sh" "$BUILD_DIR/.profile.d/cipherstash.sh"
