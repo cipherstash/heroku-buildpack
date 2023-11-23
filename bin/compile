@@ -21,4 +21,4 @@ chmod +x "$BUILD_DIR/.cipherstash/bin/tandem"
 export PATH="$BUILD_DIR/.cipherstash/bin":$PATH
 
 mkdir -p "$BUILD_DIR/.profile.d/"
-cp "$BUILDPACK_DIR/profile.sh" "$BUILD_DIR/.profile.d/cipherstash.sh"
+cp "$BUILDPACK_DIR/cipherstash-profile.sh" "$BUILD_DIR/.profile.d/cipherstash.sh"
