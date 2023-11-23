@@ -5,5 +5,5 @@ indent() {
 }
 
 echo "Building" | indent
-echo $STACK | indent
-echo $PATH | indent
+echo "Build Dir=$1" | indent
+cp ../tandem $1/bin/tandem
