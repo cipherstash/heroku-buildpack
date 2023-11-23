@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "CipherStash Buildpack"
+echo "CipherStash Tandem"
 exit 0
