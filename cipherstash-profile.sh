@@ -1,2 +1,3 @@
 
-export PATH="$BUILD_DIR/.cipherstash/bin":$PATH
+# FIXME: I think there should be an env var instead of app
+export PATH="/app/.cipherstash/bin":$PATH

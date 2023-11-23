@@ -17,6 +17,7 @@ indent() {
 echo "Building Tandem binary into slug" | indent
 mkdir -p "$BUILD_DIR/.cipherstash/bin/"
 cp "$BUILDPACK_DIR/tandem" "$BUILD_DIR/.cipherstash/bin/tandem"
+cp "$BUILDPACK_DIR/tandem.toml" "$BUILD_DIR/.cipherstash/bin/tandem.toml"
 chmod +x "$BUILD_DIR/.cipherstash/bin/tandem"
 export PATH="$BUILD_DIR/.cipherstash/bin":$PATH
 
