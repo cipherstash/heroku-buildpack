@@ -8,11 +8,12 @@ set -e
 # parse and derive params
 BUILD_DIR=$1
 CACHE_DIR=$2
-BUILDPACK_DIR="$(dirname "$(dirname "$0")")"
+BUILDPACK_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
 indent() {
   sed -u 's/^/       /'
 }
 
-echo "Building tandem binary into slug" | indent
+echo "Building Tandem binary into slug" | indent
+echo $BUILDPACK_DIR | indent
 cp "$BUILDPACK_DIR/tandem" "$BUILD_DIR/bin/tandem"
