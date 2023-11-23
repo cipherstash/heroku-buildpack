@@ -19,4 +19,5 @@ mkdir -p "$BUILD_DIR/.cipherstash/bin/"
 cp "$BUILDPACK_DIR/tandem" "$BUILD_DIR/.cipherstash/bin/tandem"
 export PATH="$BUILD_DIR/.cipherstash/bin":$PATH
 
+mkdir -p "$BUILD_DIR/.profile.d/"
 cp "$BUILDPACK_DIR/profile.sh" "$BUILD_DIR/.profile.d/cipherstash.sh"
