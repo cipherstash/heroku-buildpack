@@ -1,9 +1,18 @@
 #!/bin/bash
 
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+# fail fast
+set -e
+
+# parse and derive params
+BUILD_DIR=$1
+CACHE_DIR=$2
+BUILDPACK_DIR="$(dirname "$(dirname "$0")")"
+
 indent() {
   sed -u 's/^/       /'
 }
 
-echo "Building" | indent
-echo "Build Dir=$1" | indent
-cp ../tandem $1/bin/tandem
+echo "Building tandem binary into slug" | indent
+cp "$BUILDPACK_DIR/tandem" "$BUILD_DIR/bin/tandem"
