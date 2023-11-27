@@ -5,7 +5,7 @@
 Deploy [Tandem](https://cipherstash.com/products/tandem) to Heroku with this Buildpack.
 It adds the `tandem` binary which can be run as a worker process.
 
-## Deploy to existing app
+## Deploying
 
 If you have an existing app in Heroku, you can add this buildpack:
 
@@ -31,5 +31,24 @@ Commit the change to your Procfile and push to Heroku.
 git add Procfile
 git commit -m "Added tandem worker to Heroku Procfile"
 git push heroku main
+```
+
+### Scaling the worker
+
+To spin up a Tandem Dyno instance, you need to scale to at least one worker.
+
+```sh
+heroku ps:scale worker=1
+```
+
+And you should see something like the following:
+
+```sh
+heroku ps
+=== web (Basic): bundle exec rails server -p $PORT (1)
+web.1: up 2023/11/27 08:00:04 +1100 (~ 26s ago)
+
+=== worker (Basic): tandem (1)
+worker.1: restarting 2023/11/27 08:00:29 +1100 (~ 1s ago)
 ```
 
